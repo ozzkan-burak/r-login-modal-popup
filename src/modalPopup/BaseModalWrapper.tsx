@@ -1,5 +1,6 @@
 import { IBaseModalWrapperProps } from "../interface/baseModalWrapper"
 import Modal from "./Modal"
+import { DesktopModalContainer, ModalHeader } from "./ModalPopup.styles"
 
 const BaseModalWrapper: React.FC<IBaseModalWrapperProps> = ({onBackDrop, isModalVisible}) => {
 
@@ -8,7 +9,11 @@ const BaseModalWrapper: React.FC<IBaseModalWrapperProps> = ({onBackDrop, isModal
   }
 
   return (
-    <Modal onBackDrop={onBackDrop} />
+    <Modal onBackDrop={onBackDrop} >
+      <DesktopModalContainer>
+        <ModalHeader>Modal Info</ModalHeader>
+      </DesktopModalContainer>
+    </Modal>
   )
 }
 
