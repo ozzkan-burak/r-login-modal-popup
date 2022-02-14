@@ -16,7 +16,7 @@ function App() {
   return (
     <div className="App">
       <button onClick={toggleModal}>Show Modal</button>
-      <BaseModalWrapper isModalVisible={isModalVisible} onBackDrop={toggleModal} />
+      <BaseModalWrapper isModalVisible={isModalVisible} onBackDrop={toggleModal} header='Login' message='Please login' />
     </div>
   );
 }
