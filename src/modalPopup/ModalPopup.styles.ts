@@ -18,6 +18,18 @@ export const DesktopModalContainer = styled(ModalContainer)`
   fot-size: 26px;
 `;
 
+
+export const MobileModalContainer = styled(ModalContainer)`
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  padding: 16px;
+  min-height: 160px;
+  font-size: 26px;
+`;
+
 export const ModalHeader = styled.h3 `
   color: white;
   font-size:35px;
@@ -83,6 +95,7 @@ const CloseButton = styled.div `
   background-color: #c8c8c8;
   border-radius: 50%;
   cursor: pointer;
+  top: -${CLOSE_BUTTON_SIZE / 2}px;
   & > * {
   opacity: 1;
   }
@@ -93,6 +106,9 @@ const CloseButton = styled.div `
 `;
 
 export const DesktopCloseButton = styled(CloseButton)`
-  top: -${CLOSE_BUTTON_SIZE / 2}px;
   left: calc(100% - ${CLOSE_BUTTON_SIZE  / 2}px);
+`;
+
+export const MobileCloseButton = styled(CloseButton)`
+  left: calc(100% - ${CLOSE_BUTTON_SIZE  * 1.5 + 10}px);
 `;
