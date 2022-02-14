@@ -4,6 +4,7 @@ import './App.css';
 
 // component
 import BaseModalWrapper from './modalPopup/BaseModalWrapper';
+import RWDModal from './modalPopup/RWDModalProps';
 
 function App() {
 
@@ -16,7 +17,7 @@ function App() {
   return (
     <div className="App">
       <button onClick={toggleModal}>Show Modal</button>
-      <BaseModalWrapper isModalVisible={isModalVisible} onBackDrop={toggleModal} header='Login' message='Please login' />
+      <RWDModal isModalVisible={isModalVisible} onBackDrop={toggleModal} header='Login' message='Please login' />
     </div>
   );
 }
