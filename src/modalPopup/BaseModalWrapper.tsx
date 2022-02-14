@@ -1,8 +1,8 @@
 import { IBaseModalWrapperProps } from "../interface/baseModalWrapper"
 import Modal from "./Modal"
-import { DesktopModalContainer, ModalHeader } from "./ModalPopup.styles"
+import { DesktopModalContainer, ModalHeader, Message, DesktopCloseButton, CloseSign } from "./ModalPopup.styles"
 
-const BaseModalWrapper: React.FC<IBaseModalWrapperProps> = ({onBackDrop, isModalVisible}) => {
+const BaseModalWrapper: React.FC<IBaseModalWrapperProps> = ({onBackDrop, isModalVisible, header, message}) => {
 
   if(!isModalVisible) {
     return null
@@ -11,7 +11,11 @@ const BaseModalWrapper: React.FC<IBaseModalWrapperProps> = ({onBackDrop, isModal
   return (
     <Modal onBackDrop={onBackDrop} >
       <DesktopModalContainer>
-        <ModalHeader>Modal Info</ModalHeader>
+        <DesktopCloseButton onClick={onBackDrop}>
+          <CloseSign />
+        </DesktopCloseButton>
+        <ModalHeader>{header}</ModalHeader>
+        {message && <Message>{message}</Message>}
       </DesktopModalContainer>
     </Modal>
   )
