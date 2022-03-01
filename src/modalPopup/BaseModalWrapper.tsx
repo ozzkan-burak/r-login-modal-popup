@@ -6,7 +6,7 @@ import {  ModalHeader, Message, CloseSign } from "./ModalPopup.styles"
 
 type Props = IBaseModalWrapperProps & IComponentsProps
 
-const BaseModalWrapper: React.FC<Props> = ({onBackDrop, isModalVisible, header, message, ContainerComponent, CloseButtonComponent}) => {
+const BaseModalWrapper: React.FC<Props> = ({content ,onBackDrop, isModalVisible, header, message, ContainerComponent, CloseButtonComponent}) => {
 
   if(!isModalVisible) {
     return null
@@ -20,6 +20,7 @@ const BaseModalWrapper: React.FC<Props> = ({onBackDrop, isModalVisible, header, 
         </CloseButtonComponent>
         <ModalHeader>{header}</ModalHeader>
         {message && <Message>{message}</Message>}
+        {content}
       </ContainerComponent>
     </Modal>
   )
