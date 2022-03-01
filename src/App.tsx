@@ -3,8 +3,11 @@ import { useState } from 'react';
 import './App.css';
 
 // component
-import BaseModalWrapper from './modalPopup/BaseModalWrapper';
-import RWDModal from './modalPopup/RWDModalProps';
+import LoginModal from './modalPopup/LoginModal';
+
+// type
+import {LoginFunction} from './interface/loginModalProps';
+
 
 function App() {
 
@@ -14,10 +17,22 @@ function App() {
     setModalVisible(wasModalVisible => !wasModalVisible)
   }
 
+  const onBackdropClick = () => {
+    setModalVisible(false);
+  }
+
+  const onLoginRequested: LoginFunction = async ({password, login}: any) => {
+    console.log(password, login);
+  }
+
   return (
     <div className="App">
       <button onClick={toggleModal}>Show Modal</button>
-      <RWDModal isModalVisible={isModalVisible} onBackDrop={toggleModal} header='Login' message='Please login' />
+      <LoginModal 
+        onBackdropClick={onBackdropClick}
+        onLoginRequested={onLoginRequested}
+        isModalVisible={isModalVisible}
+      />
     </div>
   );
 }

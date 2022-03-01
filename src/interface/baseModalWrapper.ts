@@ -1,8 +1,11 @@
+import { ReactNode } from "react";
+
 export interface IBaseModalWrapperProps {
   isModalVisible: boolean;
   onBackDrop: () => void;
   header: string;
   message?: string;
+  content?: ReactNode
 }
 
 export interface IRWDModalProps {
